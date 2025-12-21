@@ -13,11 +13,6 @@ public:
     World world;
     Camera camera;
 
-    Application()
-    {
-        
-    }
-
     void run()
     {
         while(!glfwWindowShouldClose(window.window))
