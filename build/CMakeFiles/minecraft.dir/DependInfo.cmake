@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/owaismacbook/Documents/minecraftv2/src/glad.c" "CMakeFiles/minecraft.dir/src/glad.c.o" "gcc" "CMakeFiles/minecraft.dir/src/glad.c.o.d"
-  "/Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp" "CMakeFiles/minecraft.dir/include/chunk.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/chunk.cpp.o.d"
+  "/Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp" "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o.d"
   "/Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp" "CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o.d"
   "/Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_demo.cpp" "CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o.d"
   "/Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_draw.cpp" "CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o.d"

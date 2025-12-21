@@ -136,29 +136,29 @@ minecraft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/build
 .PHONY : minecraft/fast
 
-include/chunk.o: include/chunk.cpp.o
-.PHONY : include/chunk.o
+include/chunkmesh.o: include/chunkmesh.cpp.o
+.PHONY : include/chunkmesh.o
 
 # target to build an object file
-include/chunk.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.o
-.PHONY : include/chunk.cpp.o
+include/chunkmesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o
+.PHONY : include/chunkmesh.cpp.o
 
-include/chunk.i: include/chunk.cpp.i
-.PHONY : include/chunk.i
+include/chunkmesh.i: include/chunkmesh.cpp.i
+.PHONY : include/chunkmesh.i
 
 # target to preprocess a source file
-include/chunk.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.i
-.PHONY : include/chunk.cpp.i
+include/chunkmesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunkmesh.cpp.i
+.PHONY : include/chunkmesh.cpp.i
 
-include/chunk.s: include/chunk.cpp.s
-.PHONY : include/chunk.s
+include/chunkmesh.s: include/chunkmesh.cpp.s
+.PHONY : include/chunkmesh.s
 
 # target to generate assembly for a file
-include/chunk.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.s
-.PHONY : include/chunk.cpp.s
+include/chunkmesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s
+.PHONY : include/chunkmesh.cpp.s
 
 include/imgui/imgui.o: include/imgui/imgui.cpp.o
 .PHONY : include/imgui/imgui.o
@@ -386,9 +386,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... minecraft"
-	@echo "... include/chunk.o"
-	@echo "... include/chunk.i"
-	@echo "... include/chunk.s"
+	@echo "... include/chunkmesh.o"
+	@echo "... include/chunkmesh.i"
+	@echo "... include/chunkmesh.s"
 	@echo "... include/imgui/imgui.o"
 	@echo "... include/imgui/imgui.i"
 	@echo "... include/imgui/imgui.s"

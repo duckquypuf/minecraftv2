@@ -16,7 +16,7 @@ file(GLOB IMGUI_SOURCES
 add_executable(minecraft
     src/main.cpp
     src/glad.c
-    include/chunk.cpp
+    include/chunkmesh.cpp
     ${IMGUI_SOURCES}
 )
 

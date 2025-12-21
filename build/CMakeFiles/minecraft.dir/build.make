@@ -100,19 +100,19 @@ CMakeFiles/minecraft.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/minecraft.dir/src/glad.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/src/glad.c -o CMakeFiles/minecraft.dir/src/glad.c.s
 
-CMakeFiles/minecraft.dir/include/chunk.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/chunk.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp
-CMakeFiles/minecraft.dir/include/chunk.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minecraft.dir/include/chunk.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/chunk.cpp.o -MF CMakeFiles/minecraft.dir/include/chunk.cpp.o.d -o CMakeFiles/minecraft.dir/include/chunk.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp
+CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: CMakeFiles/minecraft.dir/flags.make
+CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp
+CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o -MF CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o.d -o CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp
 
-CMakeFiles/minecraft.dir/include/chunk.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/chunk.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp > CMakeFiles/minecraft.dir/include/chunk.cpp.i
+CMakeFiles/minecraft.dir/include/chunkmesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/chunkmesh.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp > CMakeFiles/minecraft.dir/include/chunkmesh.cpp.i
 
-CMakeFiles/minecraft.dir/include/chunk.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/chunk.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp -o CMakeFiles/minecraft.dir/include/chunk.cpp.s
+CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp -o CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s
 
 CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o: CMakeFiles/minecraft.dir/flags.make
 CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp
@@ -216,7 +216,7 @@ CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.s: cmake_force
 minecraft_OBJECTS = \
 "CMakeFiles/minecraft.dir/src/main.cpp.o" \
 "CMakeFiles/minecraft.dir/src/glad.c.o" \
-"CMakeFiles/minecraft.dir/include/chunk.cpp.o" \
+"CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o" \
 "CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o" \
 "CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o" \
 "CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o" \
@@ -230,7 +230,7 @@ minecraft_EXTERNAL_OBJECTS =
 
 minecraft: CMakeFiles/minecraft.dir/src/main.cpp.o
 minecraft: CMakeFiles/minecraft.dir/src/glad.c.o
-minecraft: CMakeFiles/minecraft.dir/include/chunk.cpp.o
+minecraft: CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o
 minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o
 minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o
 minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o
