@@ -1020,4 +1020,5 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Users/owaismacbook/Documents/minecraftv2/include/world.h \
   /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
   /Users/owaismacbook/Documents/minecraftv2/include/block.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/chunk.h
+  /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.h

@@ -642,8 +642,8 @@ CMakeFiles/minecraft.dir/include/chunk.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/transform.h \
   /Users/owaismacbook/Documents/minecraftv2/include/glad/glad.h \
   /Users/owaismacbook/Documents/minecraftv2/include/KHR/khrplatform.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/world.h \
   /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
   /Users/owaismacbook/Documents/minecraftv2/include/block.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
-  /Users/owaismacbook/Documents/minecraftv2/include/chunk.h
+  /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/world.h
