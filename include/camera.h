@@ -4,6 +4,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <algorithm>
 
+#include "voxelData.h"
+
 class Camera
 {
 public:
@@ -24,7 +26,7 @@ public:
         this->worldUp = worldUp;
         this->up = worldUp;
 
-        pos = glm::vec3(0.0f);
+        pos = glm::vec3(WORLD_WIDTH * CHUNK_WIDTH / 2.0f, 100.0f, WORLD_WIDTH * CHUNK_WIDTH / 2.0f);
         yaw = 90.0f;
         pitch = 0.0f;
         lastX = 1440.0f / 2.0f;

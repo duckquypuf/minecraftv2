@@ -62,6 +62,9 @@ public:
         }
 
         glEnable(GL_DEPTH_TEST);
+        glFrontFace(GL_CW);
+        glCullFace(GL_BACK);
+        glEnable(GL_CULL_FACE);
     }
 
     void processInput()

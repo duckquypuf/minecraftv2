@@ -1017,8 +1017,9 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imgui_impl_opengl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
   /Users/owaismacbook/Documents/minecraftv2/include/camera.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/world.h \
   /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
   /Users/owaismacbook/Documents/minecraftv2/include/block.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/FastNoiseLite.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/world.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.h

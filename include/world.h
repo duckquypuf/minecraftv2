@@ -11,6 +11,13 @@ public:
 
     World()
     {
+        // --- Initialise Noise ---
+        noise.SetSeed(1738);
+        noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
+        noise.SetFrequency(0.02f);
+        noise.SetFractalOctaves(2);
+
+        // --- Generate Chunks ---
         generateChunks();
     }
 
@@ -84,9 +91,15 @@ public:
     {
         uint8_t voxel = 0;
 
-        if (y == CHUNK_HEIGHT - 1)
+        float height01 = noise.GetNoise((float)coord.x * CHUNK_WIDTH + x, (float)coord.z * CHUNK_WIDTH + z);
+        float terrainHeight = height01 * TERRAIN_HEIGHT;
+        int height = (int)terrainHeight + TERRAIN_MIN_HEIGHT;
+
+        if(y>height) return 0;
+
+        if (y == height)
             voxel = 1; // Grass
-        else if (y >= 0)
+        else
             voxel = 2; // Stone
 
         return voxel;

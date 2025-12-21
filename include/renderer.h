@@ -53,7 +53,7 @@ public:
                 if (world->chunks[x][z]->mesh)
                 {
                     glm::mat4 model = glm::mat4(1.0f);
-                    model = glm::translate(model, glm::vec3(x * CHUNK_WIDTH, 0.0f, z * CHUNK_HEIGHT));
+                    model = glm::translate(model, glm::vec3(x * CHUNK_WIDTH, 0.0f, z * CHUNK_WIDTH));
                     shader->setMat4("model", model);
                     world->chunks[x][z]->mesh->draw();
                 }

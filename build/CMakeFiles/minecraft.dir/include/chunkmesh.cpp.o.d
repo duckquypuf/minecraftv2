@@ -736,5 +736,6 @@ CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/owaismacbook/Documents/minecraftv2/include/block.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/FastNoiseLite.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
   /Users/owaismacbook/Documents/minecraftv2/include/world.h
