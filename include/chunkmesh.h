@@ -2,8 +2,10 @@
 
 #include <vector>
 #include <glad/glad.h>
+#include "voxelData.h"
 
-#include "world.h"
+class Chunk;
+class World;
 
 class ChunkMesh
 {
@@ -21,7 +23,6 @@ public:
     }
 
     void addBlockFaces(Chunk *chunk, World *world, int x, int y, int z, uint8_t blockID);
-
     void buildMesh(Chunk *chunk, World *world);
 
     void draw()
@@ -35,8 +36,6 @@ private:
     int vertexCount = 0;
 
     std::vector<float> vertices;
-
-    void addBlockFaces(Chunk chunk, World *world, int x, int y, int z, uint8_t blockID);
 
     void addFace(int faceIndex, int x, int y, int z)
     {

@@ -15,6 +15,7 @@
 #include "imgui/imgui_impl_opengl3.h"
 
 #include "camera.h"
+#include "world.h"
 
 class Renderer
 {
@@ -30,10 +31,29 @@ public:
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
-    void render(Camera cam)
+    void render(Camera cam, World *world)
     {
+        shader->use();
+
         glm::mat4 view = cam.GetViewMatrix();
         glm::mat4 proj = cam.GetProjectionMatrix();
+        glm::mat4 model = glm::mat4(1.0f);
+
+        shader->setMat4("view", view);
+        shader->setMat4("projection", proj);
+        shader->setMat4("model", model);
+
+        // Render all chunks
+        for (int x = 0; x < WORLD_WIDTH; x++)
+        {
+            for (int z = 0; z < WORLD_WIDTH; z++)
+            {
+                if (world->chunks[x][z]->mesh)
+                {
+                    world->chunks[x][z]->mesh->draw();
+                }
+            }
+        }
     }
 
 private:

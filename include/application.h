@@ -25,7 +25,7 @@ public:
             window.processInput();
             camera.processInput(window.getInput());
             renderer.beginFrame();
-            renderer.render(camera);
+            renderer.render(camera, &world);
             window.update();
         }
     }
