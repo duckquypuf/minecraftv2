@@ -640,8 +640,8 @@ CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_left.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_right.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/transform.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/glad/glad.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/KHR/khrplatform.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad/glad.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/KHR/khrplatform.h \
   /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
   /Users/owaismacbook/Documents/minecraftv2/include/block.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \

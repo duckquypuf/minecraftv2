@@ -733,11 +733,11 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/owaismacbook/Documents/minecraftv2/include/application.h \
   /Users/owaismacbook/Documents/minecraftv2/include/window.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/glad/glad.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/KHR/khrplatform.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad/glad.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/KHR/khrplatform.h \
   /opt/homebrew/include/GLFW/glfw3.h \
   /Users/owaismacbook/Documents/minecraftv2/include/renderer.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/stb_image.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/stb_image.h \
   /Users/owaismacbook/Documents/minecraftv2/include/shader.h \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
@@ -1011,10 +1011,10 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/imgui/imconfig.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_glfw.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_opengl3.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imgui.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imconfig.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imgui_impl_glfw.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imgui_impl_opengl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
   /Users/owaismacbook/Documents/minecraftv2/include/camera.h \
   /Users/owaismacbook/Documents/minecraftv2/include/world.h \

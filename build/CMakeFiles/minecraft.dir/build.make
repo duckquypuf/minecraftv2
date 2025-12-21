@@ -86,19 +86,19 @@ CMakeFiles/minecraft.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/src/main.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/src/main.cpp -o CMakeFiles/minecraft.dir/src/main.cpp.s
 
-CMakeFiles/minecraft.dir/src/glad.c.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/src/glad.c.o: /Users/owaismacbook/Documents/minecraftv2/src/glad.c
-CMakeFiles/minecraft.dir/src/glad.c.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/minecraft.dir/src/glad.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/minecraft.dir/src/glad.c.o -MF CMakeFiles/minecraft.dir/src/glad.c.o.d -o CMakeFiles/minecraft.dir/src/glad.c.o -c /Users/owaismacbook/Documents/minecraftv2/src/glad.c
+CMakeFiles/minecraft.dir/thirdparty/glad.c.o: CMakeFiles/minecraft.dir/flags.make
+CMakeFiles/minecraft.dir/thirdparty/glad.c.o: /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad.c
+CMakeFiles/minecraft.dir/thirdparty/glad.c.o: CMakeFiles/minecraft.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/minecraft.dir/thirdparty/glad.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/minecraft.dir/thirdparty/glad.c.o -MF CMakeFiles/minecraft.dir/thirdparty/glad.c.o.d -o CMakeFiles/minecraft.dir/thirdparty/glad.c.o -c /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad.c
 
-CMakeFiles/minecraft.dir/src/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/minecraft.dir/src/glad.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/src/glad.c > CMakeFiles/minecraft.dir/src/glad.c.i
+CMakeFiles/minecraft.dir/thirdparty/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/minecraft.dir/thirdparty/glad.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad.c > CMakeFiles/minecraft.dir/thirdparty/glad.c.i
 
-CMakeFiles/minecraft.dir/src/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/minecraft.dir/src/glad.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/src/glad.c -o CMakeFiles/minecraft.dir/src/glad.c.s
+CMakeFiles/minecraft.dir/thirdparty/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/minecraft.dir/thirdparty/glad.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad.c -o CMakeFiles/minecraft.dir/thirdparty/glad.c.s
 
 CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: CMakeFiles/minecraft.dir/flags.make
 CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp
@@ -114,135 +114,23 @@ CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp -o CMakeFiles/minecraft.dir/include/chunkmesh.cpp.s
 
-CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_demo.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_demo.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_demo.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_demo.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_draw.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_draw.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_draw.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_draw.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_glfw.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_glfw.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_glfw.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_glfw.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_opengl3.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_opengl3.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_opengl3.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_impl_opengl3.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_tables.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_tables.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_tables.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_tables.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.s
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o: CMakeFiles/minecraft.dir/flags.make
-CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o: /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_widgets.cpp
-CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o: CMakeFiles/minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o -MF CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_widgets.cpp
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_widgets.cpp > CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.i
-
-CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/owaismacbook/Documents/minecraftv2/include/imgui/imgui_widgets.cpp -o CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.s
-
 # Object files for target minecraft
 minecraft_OBJECTS = \
 "CMakeFiles/minecraft.dir/src/main.cpp.o" \
-"CMakeFiles/minecraft.dir/src/glad.c.o" \
-"CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o" \
-"CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o"
+"CMakeFiles/minecraft.dir/thirdparty/glad.c.o" \
+"CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o"
 
 # External object files for target minecraft
 minecraft_EXTERNAL_OBJECTS =
 
 minecraft: CMakeFiles/minecraft.dir/src/main.cpp.o
-minecraft: CMakeFiles/minecraft.dir/src/glad.c.o
+minecraft: CMakeFiles/minecraft.dir/thirdparty/glad.c.o
 minecraft: CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_demo.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_draw.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_impl_glfw.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_impl_opengl3.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_tables.cpp.o
-minecraft: CMakeFiles/minecraft.dir/include/imgui/imgui_widgets.cpp.o
 minecraft: CMakeFiles/minecraft.dir/build.make
 minecraft: /opt/homebrew/lib/libglfw.3.4.dylib
 minecraft: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
 minecraft: CMakeFiles/minecraft.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable minecraft"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minecraft.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

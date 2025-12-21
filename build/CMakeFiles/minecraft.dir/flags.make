@@ -5,7 +5,7 @@
 # compile CXX with /usr/bin/clang++
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+C_INCLUDES = -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -I/Users/owaismacbook/Documents/minecraftv2/thirdparty -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 
 C_FLAGSarm64 = -g -arch arm64   -Wno-deprecated-declarations
 
@@ -13,7 +13,7 @@ C_FLAGS = -g -arch arm64   -Wno-deprecated-declarations
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+CXX_INCLUDES = -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -I/Users/owaismacbook/Documents/minecraftv2/thirdparty -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 
 CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64   -Wno-deprecated-declarations
 

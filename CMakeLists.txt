@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
-include_directories(include src)
+include_directories(include src thirdparty)
 
 file(GLOB IMGUI_SOURCES
     include/imgui/*.cpp
@@ -15,7 +15,7 @@ file(GLOB IMGUI_SOURCES
 
 add_executable(minecraft
     src/main.cpp
-    src/glad.c
+    thirdparty/glad.c
     include/chunkmesh.cpp
     ${IMGUI_SOURCES}
 )
