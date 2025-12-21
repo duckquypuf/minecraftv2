@@ -5,7 +5,7 @@
 static inline const int CHUNK_WIDTH = 5;
 static inline const int CHUNK_HEIGHT = 5;
 
-static inline const int WORLD_WIDTH = 1;
+static inline const int WORLD_WIDTH = 2;
 
 static inline const Block blocks[] =
 {

@@ -33,7 +33,7 @@ void main()
     
     // Simple directional lighting
     vec3 lightDir = normalize(vec3(0.5, 1.0, 0.3));
-    float diff = max(dot(normalize(Normal), lightDir), 0.3);
+    float diff = max(dot(normalize(Normal), lightDir), 0.5);
     
     // Apply lighting to texture
     vec3 result = texColor.rgb * diff;
