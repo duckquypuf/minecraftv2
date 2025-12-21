@@ -41,11 +41,9 @@ public:
 
         glm::mat4 view = cam.GetViewMatrix();
         glm::mat4 proj = cam.GetProjectionMatrix();
-        glm::mat4 model = glm::mat4(1.0f);
 
         shader->setMat4("view", view);
         shader->setMat4("projection", proj);
-        shader->setMat4("model", model);
 
         // Render all chunks
         for (int x = 0; x < WORLD_WIDTH; x++)
@@ -54,6 +52,9 @@ public:
             {
                 if (world->chunks[x][z]->mesh)
                 {
+                    glm::mat4 model = glm::mat4(1.0f);
+                    model = glm::translate(model, glm::vec3(x * CHUNK_WIDTH, 0.0f, z * CHUNK_HEIGHT));
+                    shader->setMat4("model", model);
                     world->chunks[x][z]->mesh->draw();
                 }
             }
