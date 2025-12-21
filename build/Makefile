@@ -136,6 +136,30 @@ minecraft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/build
 .PHONY : minecraft/fast
 
+include/chunk.o: include/chunk.cpp.o
+.PHONY : include/chunk.o
+
+# target to build an object file
+include/chunk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.o
+.PHONY : include/chunk.cpp.o
+
+include/chunk.i: include/chunk.cpp.i
+.PHONY : include/chunk.i
+
+# target to preprocess a source file
+include/chunk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.i
+.PHONY : include/chunk.cpp.i
+
+include/chunk.s: include/chunk.cpp.s
+.PHONY : include/chunk.s
+
+# target to generate assembly for a file
+include/chunk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/include/chunk.cpp.s
+.PHONY : include/chunk.cpp.s
+
 include/chunkmesh.o: include/chunkmesh.cpp.o
 .PHONY : include/chunkmesh.o
 
@@ -218,6 +242,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... minecraft"
+	@echo "... include/chunk.o"
+	@echo "... include/chunk.i"
+	@echo "... include/chunk.s"
 	@echo "... include/chunkmesh.o"
 	@echo "... include/chunkmesh.i"
 	@echo "... include/chunkmesh.s"

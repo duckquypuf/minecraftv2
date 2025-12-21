@@ -31,11 +31,7 @@ void ChunkMesh::addBlockFaces(Chunk* chunk, World* world, int x, int y, int z, u
         int ny = y + faceChecks[face * 3 + 1];
         int nz = z + faceChecks[face * 3 + 2];
 
-        bool solidNeighbor =
-            nx >= 0 && nx < CHUNK_WIDTH &&
-            ny >= 0 && ny < CHUNK_HEIGHT &&
-            nz >= 0 && nz < CHUNK_WIDTH &&
-            !world->isVoxelTransparent(chunk->voxelMap[nx][ny][nz]);
+        bool solidNeighbor = !world->isVoxelTransparent(chunk->coord, nx, ny, nz);
 
         if (solidNeighbor)
             continue;

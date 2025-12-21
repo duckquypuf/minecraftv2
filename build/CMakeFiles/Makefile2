@@ -85,12 +85,12 @@ clean: CMakeFiles/minecraft.dir/clean
 CMakeFiles/minecraft.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=1,2,3,4 "Built target minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target minecraft"
 .PHONY : CMakeFiles/minecraft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/minecraft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/minecraft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles 0
 .PHONY : CMakeFiles/minecraft.dir/rule
@@ -102,7 +102,7 @@ minecraft: CMakeFiles/minecraft.dir/rule
 # codegen rule for target.
 CMakeFiles/minecraft.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/owaismacbook/Documents/minecraftv2/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target minecraft"
 .PHONY : CMakeFiles/minecraft.dir/codegen
 
 # clean rule for target.

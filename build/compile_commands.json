@@ -16,5 +16,11 @@
   "command": "/usr/bin/clang++  -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -I/Users/owaismacbook/Documents/minecraftv2/thirdparty -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64   -Wno-deprecated-declarations -o CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp",
   "file": "/Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp",
   "output": "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o"
+},
+{
+  "directory": "/Users/owaismacbook/Documents/minecraftv2/build",
+  "command": "/usr/bin/clang++  -I/Users/owaismacbook/Documents/minecraftv2/include -I/Users/owaismacbook/Documents/minecraftv2/src -I/Users/owaismacbook/Documents/minecraftv2/thirdparty -isystem /opt/homebrew/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64   -Wno-deprecated-declarations -o CMakeFiles/minecraft.dir/include/chunk.cpp.o -c /Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp",
+  "file": "/Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp",
+  "output": "CMakeFiles/minecraft.dir/include/chunk.cpp.o"
 }
 ]

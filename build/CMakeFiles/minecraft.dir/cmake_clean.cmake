@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/minecraft.dir/include/chunk.cpp.o"
+  "CMakeFiles/minecraft.dir/include/chunk.cpp.o.d"
   "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o"
   "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o.d"
   "CMakeFiles/minecraft.dir/src/main.cpp.o"

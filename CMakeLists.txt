@@ -17,6 +17,7 @@ add_executable(minecraft
     src/main.cpp
     thirdparty/glad.c
     include/chunkmesh.cpp
+    include/chunk.cpp
     ${IMGUI_SOURCES}
 )
 

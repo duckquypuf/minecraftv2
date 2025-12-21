@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/owaismacbook/Documents/minecraftv2/thirdparty/glad.c" "CMakeFiles/minecraft.dir/thirdparty/glad.c.o" "gcc" "CMakeFiles/minecraft.dir/thirdparty/glad.c.o.d"
+  "/Users/owaismacbook/Documents/minecraftv2/include/chunk.cpp" "CMakeFiles/minecraft.dir/include/chunk.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/chunk.cpp.o.d"
   "/Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.cpp" "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o" "gcc" "CMakeFiles/minecraft.dir/include/chunkmesh.cpp.o.d"
   "/Users/owaismacbook/Documents/minecraftv2/src/main.cpp" "CMakeFiles/minecraft.dir/src/main.cpp.o" "gcc" "CMakeFiles/minecraft.dir/src/main.cpp.o.d"
   )

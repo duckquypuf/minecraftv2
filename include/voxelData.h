@@ -1,16 +1,18 @@
 #pragma once
 
+#include <iostream>
 #include "block.h"
 
-static inline const int CHUNK_WIDTH = 5;
-static inline const int CHUNK_HEIGHT = 5;
+static inline const int CHUNK_WIDTH = 16;
+static inline const int CHUNK_HEIGHT = 16;
 
-static inline const int WORLD_WIDTH = 2;
+static inline const int WORLD_WIDTH = 5;
 
 static inline const Block blocks[] =
 {
     {"Air", AIR, {0, 0, 0, 0, 0, 0}},
     {"Grass", SOLID, {1, 1, 1, 1, 2, 0}},
+    {"Stone", SOLID, {3, 3, 3, 3, 3, 3}},
 };
 
 static inline const float cubeVertices[6 * 6 * 8] = 
