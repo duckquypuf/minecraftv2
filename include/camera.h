@@ -49,15 +49,26 @@ public:
         pos = newPos;
     }
 
-    void processInput(InputState state)
+    void processInput(InputState state, float dt)
     {
         yaw += state.mouseX;
-        pitch -= state.mouseY;
+        pitch += state.mouseY;
 
         if (pitch > 89.0f)
             pitch = 89.0f;
         if (pitch < -89.0f)
             pitch = -89.0f;
+
+        float velocity = moveSpeed * dt;
+
+        if (state.w)
+            pos += forward * velocity;
+        if (state.s)
+            pos -= forward * velocity;
+        if (state.a)
+            pos -= right * velocity;
+        if (state.d)
+            pos += right * velocity;
 
         updateCameraVectors();
     }
@@ -82,6 +93,8 @@ public:
 private:
     float camSpeed = 2.0f;
     float mouseSensitivity = 10.0f;
+
+    float moveSpeed = 5.0f;
 
     float FOV = 90.0f;
     int sprintAnimDuration = 10;

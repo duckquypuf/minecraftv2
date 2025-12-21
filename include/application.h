@@ -23,7 +23,7 @@ public:
         while(!glfwWindowShouldClose(window.window))
         {
             window.processInput();
-            camera.processInput(window.getInput());
+            camera.processInput(window.getInput(), window.deltaTime);
             renderer.beginFrame();
             renderer.render(camera, &world);
             window.update();

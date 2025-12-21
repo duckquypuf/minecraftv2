@@ -25,6 +25,9 @@ public:
     GLFWwindow* window;
     const char* windowName;
 
+    float deltaTime = 0.0f;
+    float lastFrame = 0.0f;
+
     Window(const char* windowName, int screenWidth, int screenHeight)
     {
         this->screenWidth = screenWidth;
@@ -90,7 +93,9 @@ public:
     void update()
     {
         // --- Calculate Delta Time ---
-        // TODO
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
         
         glfwSwapBuffers(window);
         glfwPollEvents();
