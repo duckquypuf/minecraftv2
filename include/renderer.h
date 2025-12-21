@@ -20,9 +20,13 @@
 class Renderer
 {
 public:
+    unsigned int atlasTexture;
+
     Renderer(const char* vertPath, const char* fragPath)
     {
         shader = new Shader(vertPath, fragPath);
+
+        atlasTexture = loadTexture("../textures/atlas_256x256.png");
     }
 
     void beginFrame()

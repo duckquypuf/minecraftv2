@@ -2,6 +2,27 @@
 #include "chunk.h"
 #include "world.h"
 
+void ChunkMesh::addFace(Chunk *chunk, int faceIndex, int x, int y, int z)
+{
+    int offset = faceIndex * 6 * 8;
+
+    for (int i = 0; i < 6 * 8; i += 8)
+    {
+        vertices.push_back(cubeVertices[offset + i + 0] + x);
+        vertices.push_back(cubeVertices[offset + i + 1] + y);
+        vertices.push_back(cubeVertices[offset + i + 2] + z);
+
+        vertices.push_back(cubeVertices[offset + i + 3]);
+        vertices.push_back(cubeVertices[offset + i + 4]);
+        vertices.push_back(cubeVertices[offset + i + 5]);
+
+        vertices.push_back(cubeVertices[offset + i + 6]);
+        vertices.push_back(cubeVertices[offset + i + 7]);
+
+        vertices.push_back(blocks[chunk->voxelMap[x][y][z]].textureIDs[faceIndex]);
+    }
+}
+
 void ChunkMesh::addBlockFaces(Chunk* chunk, World* world, int x, int y, int z, uint8_t blockID)
 {
     for (int face = 0; face < 6; face++)
@@ -19,7 +40,7 @@ void ChunkMesh::addBlockFaces(Chunk* chunk, World* world, int x, int y, int z, u
         if (solidNeighbor)
             continue;
 
-        addFace(face, x, y, z);
+        addFace(chunk, face, x, y, z);
     }
 }
 

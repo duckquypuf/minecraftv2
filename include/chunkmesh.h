@@ -37,28 +37,11 @@ private:
 
     std::vector<float> vertices;
 
-    void addFace(int faceIndex, int x, int y, int z)
-    {
-        int offset = faceIndex * 6 * 8;
-
-        for (int i = 0; i < 6 * 8; i += 8)
-        {
-            vertices.push_back(cubeVertices[offset + i + 0] + x);
-            vertices.push_back(cubeVertices[offset + i + 1] + y);
-            vertices.push_back(cubeVertices[offset + i + 2] + z);
-
-            vertices.push_back(cubeVertices[offset + i + 3]);
-            vertices.push_back(cubeVertices[offset + i + 4]);
-            vertices.push_back(cubeVertices[offset + i + 5]);
-
-            vertices.push_back(cubeVertices[offset + i + 6]);
-            vertices.push_back(cubeVertices[offset + i + 7]);
-        }
-    }
+    void addFace(Chunk* chunk, int faceIndex, int x, int y, int z);
 
     void upload()
     {
-        vertexCount = vertices.size() / 8;
+        vertexCount = vertices.size() / 9;
 
         glBindVertexArray(VAO);
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -68,13 +51,16 @@ private:
             vertices.data(),
             GL_STATIC_DRAW);
 
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void *)0);
         glEnableVertexAttribArray(0);
 
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)(3 * sizeof(float)));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void *)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
 
-        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)(6 * sizeof(float)));
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void *)(6 * sizeof(float)));
         glEnableVertexAttribArray(2);
+
+        glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void *)(8 * sizeof(float)));
+        glEnableVertexAttribArray(3);
     }
 };
