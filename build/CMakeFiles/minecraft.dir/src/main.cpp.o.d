@@ -732,6 +732,9 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/owaismacbook/Documents/minecraftv2/include/application.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/block.h \
+  /Users/owaismacbook/Documents/minecraftv2/thirdparty/FastNoiseLite.h \
   /Users/owaismacbook/Documents/minecraftv2/include/window.h \
   /Users/owaismacbook/Documents/minecraftv2/thirdparty/glad/glad.h \
   /Users/owaismacbook/Documents/minecraftv2/thirdparty/KHR/khrplatform.h \
@@ -1017,9 +1020,7 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: \
   /Users/owaismacbook/Documents/minecraftv2/thirdparty/imgui/imgui_impl_opengl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
   /Users/owaismacbook/Documents/minecraftv2/include/camera.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/block.h \
-  /Users/owaismacbook/Documents/minecraftv2/thirdparty/FastNoiseLite.h \
   /Users/owaismacbook/Documents/minecraftv2/include/world.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
-  /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.h
+  /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/player.h

@@ -2244,6 +2244,7 @@ CMakeFiles/minecraft.dir/src/main.cpp.o: /Users/owaismacbook/Documents/minecraft
   /Users/owaismacbook/Documents/minecraftv2/include/camera.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunk.h \
   /Users/owaismacbook/Documents/minecraftv2/include/chunkmesh.h \
+  /Users/owaismacbook/Documents/minecraftv2/include/player.h \
   /Users/owaismacbook/Documents/minecraftv2/include/renderer.h \
   /Users/owaismacbook/Documents/minecraftv2/include/shader.h \
   /Users/owaismacbook/Documents/minecraftv2/include/voxelData.h \
@@ -2802,6 +2803,8 @@ CMakeFiles/minecraft.dir/thirdparty/glad.c.o: /Users/owaismacbook/Documents/mine
 /opt/homebrew/include/glm/ext/scalar_uint_sized.hpp:
 
 /opt/homebrew/include/glm/ext/scalar_int_sized.hpp:
+
+/opt/homebrew/include/glm/ext/quaternion_geometric.hpp:
 
 /opt/homebrew/include/glm/detail/type_vec2.hpp:
 
@@ -3403,6 +3406,8 @@ CMakeFiles/minecraft.dir/thirdparty/glad.c.o: /Users/owaismacbook/Documents/mine
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_arithmetic.h:
 
+/Users/owaismacbook/Documents/minecraftv2/include/player.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
@@ -3932,8 +3937,6 @@ CMakeFiles/minecraft.dir/thirdparty/glad.c.o: /Users/owaismacbook/Documents/mine
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string_view.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/stable_partition.h:
-
-/opt/homebrew/include/glm/ext/quaternion_geometric.hpp:
 
 /opt/homebrew/include/glm/exponential.hpp:
 

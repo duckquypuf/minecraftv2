@@ -20,10 +20,10 @@ public:
 
     int sprintFrames = 0;
 
-    Camera(glm::vec3 forward = glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3 worldUp = glm::vec3(0.0f, 1.0f, 0.0f))
+    Camera(glm::vec3 pos = glm::vec3(0.0f, 100.0f, 0.0f))
     {
-        this->forward = forward;
-        this->worldUp = worldUp;
+        this->forward = glm::vec3(0.0f, 0.0f, 1.0f);
+        this->worldUp = glm::vec3(0.0f, 1.0f, 0.0f);
         this->up = worldUp;
 
         pos = glm::vec3(WORLD_WIDTH * CHUNK_WIDTH / 2.0f, 100.0f, WORLD_WIDTH * CHUNK_WIDTH / 2.0f);
@@ -60,17 +60,6 @@ public:
             pitch = 89.0f;
         if (pitch < -89.0f)
             pitch = -89.0f;
-
-        float velocity = moveSpeed * dt;
-
-        if (state.w)
-            pos += forward * velocity;
-        if (state.s)
-            pos -= forward * velocity;
-        if (state.a)
-            pos -= right * velocity;
-        if (state.d)
-            pos += right * velocity;
 
         updateCameraVectors();
     }

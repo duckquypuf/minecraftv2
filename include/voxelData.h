@@ -14,6 +14,8 @@ static inline const int WORLD_WIDTH = 5;
 static inline const int TERRAIN_MIN_HEIGHT = 64;
 static inline const int TERRAIN_HEIGHT = 16;
 
+static inline const float G = 0.8f;
+
 static inline const Block blocks[] =
 {
     {"Air", AIR, {0, 0, 0, 0, 0, 0}},

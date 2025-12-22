@@ -87,6 +87,59 @@ public:
         return isVoxelTransparent(chunks[real.x][real.z]->voxelMap[localX][localY][localZ]);
     }
 
+    bool isVoxelSolid(uint8_t blockID)
+    {
+        return blocks[blockID].type == SOLID;
+    }
+
+    bool isVoxelSolid(ChunkCoord coord, int localX, int localY, int localZ)
+    {
+        int chunkX = coord.x;
+        int chunkZ = coord.z;
+
+        if (localX < 0)
+        {
+            chunkX--;
+            localX = CHUNK_WIDTH - 1;
+        }
+        else if (localX > CHUNK_WIDTH - 1)
+        {
+            chunkX++;
+            localX = 0;
+        }
+
+        if (localZ < 0)
+        {
+            chunkZ--;
+            localZ = CHUNK_WIDTH - 1;
+        }
+        else if (localZ > CHUNK_WIDTH - 1)
+        {
+            chunkZ++;
+            localZ = 0;
+        }
+
+        if (localY < 0 || localY > CHUNK_HEIGHT - 1)
+            return false;
+        if (chunkX < 0 || chunkZ < 0 || chunkX > WORLD_WIDTH - 1 || chunkZ > WORLD_WIDTH - 1)
+            return false;
+
+        return isVoxelSolid(chunks[chunkX][chunkZ]->voxelMap[localX][localY][localZ]);
+    }
+
+    bool isVoxelSolid(int worldX, int worldY, int worldZ)
+    {
+        ChunkCoord coord = ChunkCoord();
+
+        coord.x = floor(worldX / CHUNK_WIDTH);
+        coord.z = floor(worldZ / CHUNK_WIDTH);
+
+        int localX = worldX % CHUNK_WIDTH;
+        int localZ = worldZ % CHUNK_WIDTH;
+
+        return isVoxelSolid(coord, localX, worldY, localZ);
+    }
+
     uint8_t getVoxel(ChunkCoord coord, int x, int y, int z)
     {
         uint8_t voxel = 0;
