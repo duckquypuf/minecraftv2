@@ -3,6 +3,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <string>
+#include <sstream>
+#include <iomanip>
+
 struct InputState
 {
     bool leftMouseButton = false;
@@ -23,12 +27,12 @@ class Window
 public:
     int screenWidth, screenHeight;
     GLFWwindow* window;
-    const char* windowName;
+    std::string windowName;
 
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
 
-    Window(const char* windowName, int screenWidth, int screenHeight)
+    Window(std::string windowName, int screenWidth, int screenHeight)
     {
         this->screenWidth = screenWidth;
         this->screenHeight = screenHeight;
@@ -43,7 +47,7 @@ public:
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-        window = glfwCreateWindow(screenWidth, screenHeight, windowName, NULL, NULL);
+        window = glfwCreateWindow(screenWidth, screenHeight, windowName.c_str(), NULL, NULL);
 
         if (window == NULL)
         {
@@ -80,7 +84,8 @@ public:
         input.s = glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS;
         input.a = glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS;
         input.d = glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS;
-
+        input.spacebar = glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS;
+ 
         double x, y;
         glfwGetCursorPos(window, &x, &y);
     
@@ -99,7 +104,15 @@ public:
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
-        
+
+        // --- Set Window Title ---
+        float fps = 1.0f/deltaTime;
+
+        std::stringstream ss;
+        ss << windowName << " | FPS: " << std::fixed << std::setprecision(1) << fps;
+
+        glfwSetWindowTitle(window, ss.str().c_str());
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

@@ -24,8 +24,6 @@ public:
 
     void processInput(InputState state, float dt)
     {
-        float speed = moveSpeed * dt;
-
         glm::vec3 forwardFlat = glm::normalize(glm::vec3(camera.forward.x, 0.0f, camera.forward.z));
 
         glm::vec3 inputDir = glm::vec3(0.0f);
@@ -38,11 +36,24 @@ public:
         if (state.d)
             inputDir += camera.right;
 
+        if(state.spacebar && isGrounded)
+        {
+            if(!jumpRequest)
+            {
+                velocity.y = jumpPower;
+            }
+
+            jumpRequest = true;
+        } else
+        {
+            jumpRequest = false;
+        }
+
         if (glm::length(inputDir) > 0.0f)
         {
             inputDir = glm::normalize(inputDir);
-            velocity.x = inputDir.x * speed;
-            velocity.z = inputDir.z * speed;
+            velocity.x = inputDir.x * moveSpeed;
+            velocity.z = inputDir.z * moveSpeed;
         }
 
         updateVelocity(dt);
@@ -53,19 +64,19 @@ public:
     void updateVelocity(float dt)
     {
         velocity.y -= G * dt;
-        position.x += velocity.x;
+        position.x += velocity.x * dt;
 
         if(checkCollision())
         {
-            position.x -= velocity.x;
+            position.x -= velocity.x * dt;
             velocity.x = 0.0f;
         }
 
-        position.y += velocity.y;
+        position.y += velocity.y * dt;
         bool yCollision = checkCollision();
         if (yCollision)
         {
-            position.y -= velocity.y;
+            position.y -= velocity.y * dt;
 
             isGrounded = (velocity.y < 0.0f);
 
@@ -76,26 +87,39 @@ public:
             isGrounded = false;
         }
 
-        position.z += velocity.z;
+        position.z += velocity.z * dt;
 
         if (checkCollision())
         {
-            position.z -= velocity.z;
+            position.z -= velocity.z * dt;
             velocity.z = 0.0f;
         }
 
         camera.pos = position + glm::vec3(0.0f, playerHeight, 0.0f);
 
-        velocity = glm::vec3(0.0f, velocity.y, 0.0f);
+        if(isGrounded)
+        {
+            velocity.x -= velocity.x * groundFriction * dt;
+            velocity.z -= velocity.z * groundFriction * dt;
+        } else
+        {
+            velocity.x -= velocity.x * airResistance * dt;
+            velocity.z -= velocity.z * airResistance * dt;
+        }
     }
 
 private:
     float moveSpeed = 5.0f;
+    float jumpPower = 10.0f;
 
     float playerWidth = 0.4f;
     float playerHeight = 1.8f;
 
-    bool isGrounded;
+    float groundFriction = 10.0f;
+    float airResistance = 2.0f;
+
+    bool isGrounded = false;
+    bool jumpRequest = false;
 
     bool checkCollision()
     {

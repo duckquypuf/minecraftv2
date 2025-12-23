@@ -1,8 +1,0 @@
-TODO:
-- Crafting (Hard)
-- Inventory (Medium)
-- Hotbar (Medium)
-- Creative Flying (Easy)
-- Block Breaking (Medium)
-- Threading (Hard)
-- Ores (Easy)
