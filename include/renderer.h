@@ -5,7 +5,6 @@
 
 #include <iostream>
 
-#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 #include "shader.h"
@@ -17,16 +16,30 @@
 #include "camera.h"
 #include "world.h"
 
+#include "atlasGenerator.h"
+
 class Renderer
 {
 public:
     unsigned int atlasTexture;
 
-    Renderer(const char* vertPath, const char* fragPath)
+    Renderer(const char *vertPath, const char *fragPath)
     {
+        std::cout << "Generating texture atlas..." << std::endl;
+        bool success = AtlasGenerator::generateAtlas(
+            "../textures/textures.json",
+            "../textures",
+            "../atlas/atlas_256x256.png");
+
+        if (!success)
+        {
+            std::cerr << "WARNING: Atlas generation failed, using existing atlas if available" << std::endl;
+        }
+
         shader = new Shader(vertPath, fragPath);
 
-        atlasTexture = loadTexture("../textures/atlas_256x256.png");
+        // Load atlas from generated location
+        atlasTexture = loadTexture("../atlas/atlas_256x256.png");
     }
 
     void beginFrame()
@@ -62,7 +75,7 @@ public:
     }
 
 private:
-    Shader* shader;
+    Shader *shader;
 
     unsigned int loadTexture(const char *path)
     {
