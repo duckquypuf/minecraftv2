@@ -48,7 +48,7 @@ public:
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
-    void render(Camera cam, World *world)
+    void render(Camera cam, World *world, ChunkCoord &lastPlayerCoord)
     {
         shader->use();
 
@@ -59,9 +59,9 @@ public:
         shader->setMat4("projection", proj);
 
         // Render all chunks
-        for (int x = 0; x < WORLD_WIDTH; x++)
+        for (int x = lastPlayerCoord.x - RENDER_DISTANCE; x < lastPlayerCoord.x + RENDER_DISTANCE; x++)
         {
-            for (int z = 0; z < WORLD_WIDTH; z++)
+            for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
             {
                 if (world->chunks[x][z]->mesh)
                 {

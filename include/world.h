@@ -23,21 +23,53 @@ public:
 
     void generateChunks()
     {
-        for (int x = 0; x < WORLD_WIDTH; x++)
+        for (int x = HALF_WORLD_WIDTH - RENDER_DISTANCE; x < HALF_WORLD_WIDTH + RENDER_DISTANCE; x++)
         {
-            for (int z = 0; z < WORLD_WIDTH; z++)
+            for (int z = HALF_WORLD_WIDTH - RENDER_DISTANCE; z < HALF_WORLD_WIDTH + RENDER_DISTANCE; z++)
             {
                 chunks[x][z] = new Chunk(this, ChunkCoord(x, z));
                 chunks[x][z]->populateVoxelMap();
             }
         }
 
-        for (int x = 0; x < WORLD_WIDTH; x++)
+        for (int x = HALF_WORLD_WIDTH - RENDER_DISTANCE; x < HALF_WORLD_WIDTH + RENDER_DISTANCE; x++)
         {
-            for (int z = 0; z < WORLD_WIDTH; z++)
+            for (int z = HALF_WORLD_WIDTH - RENDER_DISTANCE; z < HALF_WORLD_WIDTH + RENDER_DISTANCE; z++)
             {
                 chunks[x][z]->mesh = new ChunkMesh();
+
                 chunks[x][z]->mesh->buildMesh(chunks[x][z], this);
+            }
+        }
+    }
+
+    void updateRenderDistance(ChunkCoord lastPlayerCoord)
+    {
+        for (int x = lastPlayerCoord.x - RENDER_DISTANCE; x < lastPlayerCoord.x + RENDER_DISTANCE; x++)
+        {
+            for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
+            {
+                Chunk* chunk = chunks[x][z];
+
+                if(chunk == nullptr || !chunk->isVoxelMapPopulated)
+                {
+                    chunks[x][z] = new Chunk(this, ChunkCoord(x, z));
+                    chunks[x][z]->populateVoxelMap();
+                }
+            }
+        }
+
+        for (int x = lastPlayerCoord.x - RENDER_DISTANCE; x < lastPlayerCoord.x + RENDER_DISTANCE; x++)
+        {
+            for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
+            {
+                Chunk *chunk = chunks[x][z];
+
+                if (!chunk->isMeshGenerated)
+                {
+                    chunks[x][z]->mesh = new ChunkMesh();
+                    chunks[x][z]->mesh->buildMesh(chunks[x][z], this);
+                }
             }
         }
     }
@@ -84,7 +116,12 @@ public:
             return true;
         }
 
-        return isVoxelTransparent(chunks[real.x][real.z]->voxelMap[localX][localY][localZ]);
+        Chunk* chunk = chunks[real.x][real.z];
+
+        if (chunk == nullptr || !chunk->isVoxelMapPopulated)
+            return true;
+
+        return isVoxelTransparent(chunk->voxelMap[localX][localY][localZ]);
     }
 
     bool isVoxelSolid(uint8_t blockID)
@@ -121,7 +158,10 @@ public:
 
         if (localY < 0 || localY > CHUNK_HEIGHT - 1)
             return false;
-        if (chunkX < 0 || chunkZ < 0 || chunkX > WORLD_WIDTH - 1 || chunkZ > WORLD_WIDTH - 1)
+        
+        Chunk* chunk = chunks[chunkX][chunkZ];
+
+        if(chunk == nullptr || !chunk->isVoxelMapPopulated)
             return false;
 
         return isVoxelSolid(chunks[chunkX][chunkZ]->voxelMap[localX][localY][localZ]);

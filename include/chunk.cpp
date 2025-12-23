@@ -13,4 +13,6 @@ void Chunk::populateVoxelMap()
             }
         }
     }
+
+    isVoxelMapPopulated = true;
 }

@@ -13,6 +13,8 @@ public:
     Camera camera;
     World* world;
 
+    ChunkCoord coord;
+
     Player(World* _world, glm::vec3 _position)
     {
         world = _world;
@@ -20,6 +22,13 @@ public:
         velocity = glm::vec3(0.0f);
 
         camera.pos = position;
+
+        updateChunkCoord();
+    }
+
+    void updateChunkCoord()
+    {
+        coord = ChunkCoord((int)(position.x / CHUNK_WIDTH), (int)(position.z / CHUNK_WIDTH));
     }
 
     void processInput(InputState state, float dt)

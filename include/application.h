@@ -12,7 +12,9 @@ public:
     Window window = Window("Minecraft Clone V2", 1440, 900);
     Renderer renderer = Renderer("../src/shaders/vertex.glsl", "../src/shaders/fragment.glsl");
     World world;
-    Player player = Player(&world, glm::vec3(CHUNK_WIDTH * WORLD_WIDTH / 2.0f, 100.0f, CHUNK_WIDTH * WORLD_WIDTH / 2.0f));
+    Player player = Player(&world, glm::vec3(CHUNK_WIDTH * HALF_WORLD_WIDTH, 100.0f, CHUNK_WIDTH * HALF_WORLD_WIDTH));
+
+    ChunkCoord lastPlayerCoord;
 
     void run()
     {
@@ -20,8 +22,19 @@ public:
         {
             window.processInput();
             player.processInput(window.getInput(), window.deltaTime);
+            player.updateChunkCoord();
+
+            if(lastPlayerCoord != player.coord)
+            {
+                lastPlayerCoord = player.coord;
+            }
+
+            std::cout << lastPlayerCoord.x << " | " << lastPlayerCoord.z << std::endl;
+
+            world.updateRenderDistance(lastPlayerCoord);
+
             renderer.beginFrame();
-            renderer.render(player.camera, &world);
+            renderer.render(player.camera, &world, lastPlayerCoord);
             window.update();
         }
     }

@@ -51,6 +51,7 @@ void ChunkMesh::buildMesh(Chunk *chunk, World *world)
             for (int z = 0; z < CHUNK_WIDTH; z++)
             {
                 uint8_t blockID = chunk->voxelMap[x][y][z];
+
                 if (blockID == 0)
                     continue;
 
@@ -58,6 +59,8 @@ void ChunkMesh::buildMesh(Chunk *chunk, World *world)
             }
         }
     }
+
+    chunk->isMeshGenerated = true;
 
     upload();
 }

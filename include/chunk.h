@@ -24,6 +24,11 @@ struct ChunkCoord
     {
         return other.x == x && other.z == z;
     }
+
+    bool operator!=(const ChunkCoord &other) const
+    {
+        return other.x != x || other.z != z;
+    }
 };
 
 class World;
@@ -37,11 +42,17 @@ public:
 
     uint8_t voxelMap[CHUNK_WIDTH][CHUNK_HEIGHT][CHUNK_WIDTH];
 
+    bool isVoxelMapPopulated;
+    bool isMeshGenerated;
+
     Chunk(World* world, ChunkCoord coord)
     {
         this->world = world;
         this->coord.x = coord.x;
         this->coord.z = coord.z;
+
+        isVoxelMapPopulated = false;
+        isMeshGenerated = false;
     }
 
     void populateVoxelMap();

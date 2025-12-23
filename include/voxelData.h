@@ -10,7 +10,9 @@ static inline const int CHUNK_WIDTH = 16;
 static inline const int CHUNK_HEIGHT = 128;
 
 static inline int RENDER_DISTANCE = 2;
-static inline const int WORLD_WIDTH = 5;
+
+static inline const int WORLD_WIDTH = 100;
+static inline constexpr int HALF_WORLD_WIDTH = WORLD_WIDTH / 2;
 
 static inline const int TERRAIN_MIN_HEIGHT = 64;
 static inline const int TERRAIN_HEIGHT = 5;
