@@ -9,7 +9,7 @@ static inline FastNoiseLite noise;
 static inline const int CHUNK_WIDTH = 16;
 static inline const int CHUNK_HEIGHT = 128;
 
-static inline int RENDER_DISTANCE = 2;
+static inline int RENDER_DISTANCE = 12;
 
 static inline const int WORLD_WIDTH = 100;
 static inline constexpr int HALF_WORLD_WIDTH = WORLD_WIDTH / 2;

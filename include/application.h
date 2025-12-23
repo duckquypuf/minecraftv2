@@ -18,6 +18,14 @@ public:
 
     void run()
     {
+        window.paused = true;
+        player.paused = true;
+        
+        world.generateChunks();
+
+        window.paused = false;
+        player.paused = false;
+
         while(!glfwWindowShouldClose(window.window))
         {
             window.processInput();

@@ -15,6 +15,8 @@ public:
 
     ChunkCoord coord;
 
+    bool paused = false;
+
     Player(World* _world, glm::vec3 _position)
     {
         world = _world;
@@ -33,41 +35,44 @@ public:
 
     void processInput(InputState state, float dt)
     {
-        glm::vec3 forwardFlat = glm::normalize(glm::vec3(camera.forward.x, 0.0f, camera.forward.z));
-
-        glm::vec3 inputDir = glm::vec3(0.0f);
-        if (state.w)
-            inputDir += forwardFlat;
-        if (state.s)
-            inputDir -= forwardFlat;
-        if (state.a)
-            inputDir -= camera.right;
-        if (state.d)
-            inputDir += camera.right;
-
-        if(state.spacebar && isGrounded)
+        if(!paused)
         {
-            if(!jumpRequest)
+            glm::vec3 forwardFlat = glm::normalize(glm::vec3(camera.forward.x, 0.0f, camera.forward.z));
+
+            glm::vec3 inputDir = glm::vec3(0.0f);
+            if (state.w)
+                inputDir += forwardFlat;
+            if (state.s)
+                inputDir -= forwardFlat;
+            if (state.a)
+                inputDir -= camera.right;
+            if (state.d)
+                inputDir += camera.right;
+
+            if(state.spacebar && isGrounded)
             {
-                velocity.y = jumpPower;
+                if(!jumpRequest)
+                {
+                    velocity.y = jumpPower;
+                }
+
+                jumpRequest = true;
+            } else
+            {
+                jumpRequest = false;
             }
 
-            jumpRequest = true;
-        } else
-        {
-            jumpRequest = false;
-        }
+            if (glm::length(inputDir) > 0.0f)
+            {
+                inputDir = glm::normalize(inputDir);
+                velocity.x = inputDir.x * moveSpeed;
+                velocity.z = inputDir.z * moveSpeed;
+            }
 
-        if (glm::length(inputDir) > 0.0f)
-        {
-            inputDir = glm::normalize(inputDir);
-            velocity.x = inputDir.x * moveSpeed;
-            velocity.z = inputDir.z * moveSpeed;
+            updateVelocity(dt);
+        
+            camera.processInput(state, dt);
         }
-
-        updateVelocity(dt);
-    
-        camera.processInput(state, dt);
     }
 
     void updateVelocity(float dt)

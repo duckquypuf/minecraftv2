@@ -16,9 +16,6 @@ public:
         noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
         noise.SetFrequency(0.02f);
         noise.SetFractalOctaves(2);
-
-        // --- Generate Chunks ---
-        generateChunks();
     }
 
     void generateChunks()
