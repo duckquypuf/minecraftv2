@@ -11,11 +11,17 @@ public:
 
     World()
     {
+        // --- Initialise Biome Noise ---
+        biomeNoise.SetSeed(1038);
+        biomeNoise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
+        biomeNoise.SetFrequency(0.01f);
+        biomeNoise.SetFractalOctaves(2);
+
         // --- Initialise Noise ---
         noise.SetSeed(1738);
         noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
         noise.SetFrequency(0.02f);
-        noise.SetFractalOctaves(2);
+        noise.SetFractalOctaves(3);
     }
 
     void generateChunks()
@@ -181,14 +187,47 @@ public:
     {
         uint8_t voxel = 0;
 
-        float height01 = noise.GetNoise((float)coord.x * CHUNK_WIDTH + x, (float)coord.z * CHUNK_WIDTH + z);
-        float terrainHeight = height01 * TERRAIN_HEIGHT;
-        int height = (int)terrainHeight + TERRAIN_MIN_HEIGHT;
+        /* BIOME SELECTION PASS*/
+
+        float sumOfHeights = 0.0f;
+        int count = 0;
+        float strongestWeight = 0.0f;
+        int strongestBiomeIndex = 0;
+
+        for (int i = 0; i < sizeof(biomes)/sizeof(Biome); i++)
+        {
+            float weight = biomeNoise.GetNoise((float)coord.x * CHUNK_WIDTH + x + biomes[i].offset, (float)coord.z * CHUNK_WIDTH + z + biomes[i].offset);
+            weight = (weight + 1.0f) * 0.5f;
+
+            if (weight > strongestWeight)
+            {
+                strongestWeight = weight;
+                strongestBiomeIndex = i;
+            }
+
+            noise.SetFrequency(biomes[i].frequency);
+            float height01 = noise.GetNoise((float)coord.x * CHUNK_WIDTH + x, (float)coord.z * CHUNK_WIDTH + z) * weight;
+
+            if (height01 > 0)
+            {
+                sumOfHeights += height01;
+                count++;
+            }
+        }
+
+        Biome biome = biomes[strongestBiomeIndex];
+
+        sumOfHeights /= count;
+
+        float terrainHeight = sumOfHeights * biome.TERRAIN_HEIGHT;
+        int height = (int)terrainHeight + biome.TERRAIN_MIN_HEIGHT;
 
         if(y>height) return 0;
 
         if (y == height)
-            voxel = 1; // Grass
+            voxel = biome.surfaceBlock;
+        else if(height - biome.subsurfaceHeight < y)
+            voxel = biome.subsurfaceBlock;
         else
             voxel = 2; // Stone
 

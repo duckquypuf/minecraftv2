@@ -18,26 +18,28 @@ public:
 
     void run()
     {
-        window.paused = true;
-        player.paused = true;
-        
         world.generateChunks();
 
-        window.paused = false;
-        player.paused = false;
+        uint8_t frames = 0;
 
         while(!glfwWindowShouldClose(window.window))
         {
             window.processInput();
-            player.processInput(window.getInput(), window.deltaTime);
-            player.updateChunkCoord();
+            
+            if(frames > 1)
+            {
+                player.processInput(window.getInput(), window.deltaTime);
+                player.updateChunkCoord();
+            } else {
+                frames++;
+            }
+
+            std::cout << player.position.y << std::endl;
 
             if(lastPlayerCoord != player.coord)
             {
                 lastPlayerCoord = player.coord;
             }
-
-            std::cout << lastPlayerCoord.x << " | " << lastPlayerCoord.z << std::endl;
 
             world.updateRenderDistance(lastPlayerCoord);
 

@@ -35,44 +35,41 @@ public:
 
     void processInput(InputState state, float dt)
     {
-        if(!paused)
+        glm::vec3 forwardFlat = glm::normalize(glm::vec3(camera.forward.x, 0.0f, camera.forward.z));
+
+        glm::vec3 inputDir = glm::vec3(0.0f);
+        if (state.w)
+            inputDir += forwardFlat;
+        if (state.s)
+            inputDir -= forwardFlat;
+        if (state.a)
+            inputDir -= camera.right;
+        if (state.d)
+            inputDir += camera.right;
+
+        if(state.spacebar && isGrounded)
         {
-            glm::vec3 forwardFlat = glm::normalize(glm::vec3(camera.forward.x, 0.0f, camera.forward.z));
-
-            glm::vec3 inputDir = glm::vec3(0.0f);
-            if (state.w)
-                inputDir += forwardFlat;
-            if (state.s)
-                inputDir -= forwardFlat;
-            if (state.a)
-                inputDir -= camera.right;
-            if (state.d)
-                inputDir += camera.right;
-
-            if(state.spacebar && isGrounded)
+            if(!jumpRequest)
             {
-                if(!jumpRequest)
-                {
-                    velocity.y = jumpPower;
-                }
-
-                jumpRequest = true;
-            } else
-            {
-                jumpRequest = false;
+                velocity.y = jumpPower;
             }
 
-            if (glm::length(inputDir) > 0.0f)
-            {
-                inputDir = glm::normalize(inputDir);
-                velocity.x = inputDir.x * moveSpeed;
-                velocity.z = inputDir.z * moveSpeed;
-            }
-
-            updateVelocity(dt);
-        
-            camera.processInput(state, dt);
+            jumpRequest = true;
+        } else
+        {
+            jumpRequest = false;
         }
+
+        if (glm::length(inputDir) > 0.0f)
+        {
+            inputDir = glm::normalize(inputDir);
+            velocity.x = inputDir.x * moveSpeed;
+            velocity.z = inputDir.z * moveSpeed;
+        }
+
+        updateVelocity(dt);
+    
+        camera.processInput(state, dt);
     }
 
     void updateVelocity(float dt)

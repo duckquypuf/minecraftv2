@@ -6,6 +6,7 @@ enum BlockType
 {
     AIR = -1,
     SOLID = 0,
+    TRANSPARENT = 1,
 };
 
 class Block

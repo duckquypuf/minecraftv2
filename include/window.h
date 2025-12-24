@@ -32,8 +32,6 @@ public:
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
 
-    bool paused;
-
     Window(std::string windowName, int screenWidth, int screenHeight)
     {
         this->screenWidth = screenWidth;
@@ -103,16 +101,9 @@ public:
     void update()
     {
         // --- Calculate Delta Time ---
-
-        if(!paused)
-        {
-            float currentFrame = glfwGetTime();
-            deltaTime = currentFrame - lastFrame;
-            lastFrame = currentFrame;
-        } else
-        {
-            deltaTime = 0.0f;
-        }
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
 
         // --- Set Window Title ---
         float fps = 1.0f/deltaTime;
