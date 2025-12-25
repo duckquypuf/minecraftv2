@@ -6,17 +6,18 @@
 
 static inline FastNoiseLite biomeNoise;
 static inline FastNoiseLite noise;
+static inline FastNoiseLite terrainNoise;
 
 static inline const Biome biomes[] =
 {
-    {"Plains", 1, 3, 4, 0.02f, 0.5f, 0.5f, 3, 1000, 64, 10},
-    {"Desert", 6, 6, 3, 0.005f, 0.5f, 0.5f, 3, -500, 64, 5},
+    {"Plains", 1, 3, 4, 0.02f, 0.5f, 0.3f, 5, 1000, 64, 10},
+    {"Desert", 6, 6, 3, 0.01f, 0.5f, 0.5f, 3, -500, 64, 5},
 };
 
 static inline const int CHUNK_WIDTH = 16;
 static inline const int CHUNK_HEIGHT = 128;
 
-static inline int RENDER_DISTANCE = 12;
+static inline int RENDER_DISTANCE = 6;
 
 static inline const int WORLD_WIDTH = 100;
 static inline constexpr int HALF_WORLD_WIDTH = WORLD_WIDTH / 2;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "voxelData.h"
 #include "chunk.h"
 #include "chunkmesh.h"
@@ -22,6 +24,9 @@ public:
         noise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
         noise.SetFrequency(0.02f);
         noise.SetFractalOctaves(3);
+
+        terrainNoise.SetSeed(1738);
+        terrainNoise.SetNoiseType(FastNoiseLite::NoiseType_Perlin);
     }
 
     void generateChunks()
@@ -52,6 +57,9 @@ public:
         {
             for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
             {
+                if(x < 0 || x >= WORLD_WIDTH || z < 0 || z >= WORLD_WIDTH) 
+                    continue;
+
                 Chunk* chunk = chunks[x][z];
 
                 if(chunk == nullptr || !chunk->isVoxelMapPopulated)
@@ -66,6 +74,9 @@ public:
         {
             for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
             {
+                if (x < 0 || x >= WORLD_WIDTH || z < 0 || z >= WORLD_WIDTH)
+                    continue;
+
                 Chunk *chunk = chunks[x][z];
 
                 if (!chunk->isMeshGenerated)
@@ -162,6 +173,9 @@ public:
         if (localY < 0 || localY > CHUNK_HEIGHT - 1)
             return false;
         
+        if(chunkX < 0 || chunkX >= WORLD_WIDTH || chunkZ < 0 || chunkZ >= WORLD_WIDTH)
+            return false;
+        
         Chunk* chunk = chunks[chunkX][chunkZ];
 
         if(chunk == nullptr || !chunk->isVoxelMapPopulated)
@@ -183,50 +197,59 @@ public:
         return isVoxelSolid(coord, localX, worldY, localZ);
     }
 
+    // Standard biome generation approach (like Minecraft)
     uint8_t getVoxel(ChunkCoord coord, int x, int y, int z)
     {
+        if(y == 0) return 2; // Stone (change to bedrock)
+
         uint8_t voxel = 0;
 
-        /* BIOME SELECTION PASS*/
+        float worldX = (float)coord.x * CHUNK_WIDTH + x;
+        float worldZ = (float)coord.z * CHUNK_WIDTH + z;
 
-        float sumOfHeights = 0.0f;
-        int count = 0;
-        float strongestWeight = 0.0f;
-        int strongestBiomeIndex = 0;
+        float climateScale = 0.05f;
 
-        for (int i = 0; i < sizeof(biomes)/sizeof(Biome); i++)
+        float temperature = biomeNoise.GetNoise(worldX * climateScale, worldZ * climateScale);
+
+        float humidity = biomeNoise.GetNoise(worldX * climateScale + 10000, worldZ * climateScale + 10000);
+
+        int selectedBiome = 0;
+
+        if (temperature < 0.5f && humidity < 0.5f)
         {
-            float weight = biomeNoise.GetNoise((float)coord.x * CHUNK_WIDTH + x + biomes[i].offset, (float)coord.z * CHUNK_WIDTH + z + biomes[i].offset);
-            weight = (weight + 1.0f) * 0.5f;
-
-            if (weight > strongestWeight)
-            {
-                strongestWeight = weight;
-                strongestBiomeIndex = i;
-            }
-
-            noise.SetFrequency(biomes[i].frequency);
-            float height01 = noise.GetNoise((float)coord.x * CHUNK_WIDTH + x, (float)coord.z * CHUNK_WIDTH + z) * weight;
-
-            if (height01 > 0)
-            {
-                sumOfHeights += height01;
-                count++;
-            }
+            selectedBiome = 0; // Cold & Dry = Tundra/Plains
+        }
+        else if (temperature < 0.5f && humidity >= 0.5f)
+        {
+            selectedBiome = 1; // Cold & Wet = Taiga
+        }
+        else if (temperature >= 0.5f && humidity < 0.5f)
+        {
+            selectedBiome = 1; // Hot & Dry = Desert
+        }
+        else
+        {
+            selectedBiome = 0; // Hot & Wet = Jungle
         }
 
-        Biome biome = biomes[strongestBiomeIndex];
+        const Biome &biome = biomes[selectedBiome];
 
-        sumOfHeights /= count;
+        terrainNoise.SetFrequency(biome.frequency);
+        terrainNoise.SetFractalOctaves(biome.octaves);
+        terrainNoise.SetFractalLacunarity(biome.lacunarity);
+        terrainNoise.SetFractalGain(biome.gain);
 
-        float terrainHeight = sumOfHeights * biome.TERRAIN_HEIGHT;
-        int height = (int)terrainHeight + biome.TERRAIN_MIN_HEIGHT;
+        float noiseValue = terrainNoise.GetNoise(worldX, worldZ);
 
-        if(y>height) return 0;
+        float terrainHeight = noiseValue * biome.TERRAIN_HEIGHT;
+        int height = (int)(terrainHeight + biome.TERRAIN_MIN_HEIGHT);
+
+        if (y > height)
+            return 0;
 
         if (y == height)
             voxel = biome.surfaceBlock;
-        else if(height - biome.subsurfaceHeight < y)
+        else if (height - biome.subsurfaceHeight < y)
             voxel = biome.subsurfaceBlock;
         else
             voxel = 2; // Stone

@@ -34,8 +34,6 @@ public:
                 frames++;
             }
 
-            std::cout << player.position.y << std::endl;
-
             if(lastPlayerCoord != player.coord)
             {
                 lastPlayerCoord = player.coord;

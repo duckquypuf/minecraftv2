@@ -63,6 +63,9 @@ public:
         {
             for (int z = lastPlayerCoord.z - RENDER_DISTANCE; z < lastPlayerCoord.z + RENDER_DISTANCE; z++)
             {
+                if (x < 0 || x >= WORLD_WIDTH || z < 0 || z >= WORLD_WIDTH)
+                    continue;
+
                 if (world->chunks[x][z]->mesh)
                 {
                     glm::mat4 model = glm::mat4(1.0f);
